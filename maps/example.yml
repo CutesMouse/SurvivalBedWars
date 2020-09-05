@@ -1,0 +1,52 @@
+#記分板顯示的名稱
+DisplayName: 古老遺跡
+#遊戲死亡後倒數的位置或遊戲開始前的重生位置
+DefaultLocation: world/0.5/151.0/0.5/0.0/0.0
+# BedHead -> 床的前端 (有白色枕頭的那一端)
+# BedBack -> 床的末端
+# PortalBlock -> 終界傳送門那一格
+# SpawnPoint -> 玩家重生點
+# Generator -> 礦物生成器地點 建議站在該方塊上方後看玩家的F3 Y座標 將其數值加上0.2
+Teams:
+  '1':
+    BedHead: world/0.5/101.0/76.5/0.0/0.0
+    BedBack: world/0.5/101.0/77.5/0.0/0.0
+    PortalBlock: world/-3.0/100.0/86.0/0.0/0.0
+    SpawnPoint: world/0.5/101.0/88.5/180.0/0.0
+    Generator: world/0.5/100.7/91.5/0.0/180.0
+  '2':
+    BedHead: world/-74.5/101.0/0.5/0.0/0.0
+    BedBack: world/-75.5/101.0/0.5/0.0/0.0
+    PortalBlock: world/-85.0/100.0/-3.0/0.0/0.0
+    SpawnPoint: world/-86.5/101.0/0.5/-90.0/0.0
+    Generator: world/-89.5/100.7/0.5/0.0/-90.0
+  '3':
+    BedHead: world/0.5/101.0/-74.5/0.0/0.0
+    BedBack: world/0.5/101.0/-75.5/0.0/0.0
+    PortalBlock: world/3.0/100.0/-85.0/0.0/0.0
+    SpawnPoint: world/0.5/101.0/-86.5/0.0/0.0
+    Generator: world/0.5/100.7/-89.5/0.0/0.0
+  '4':
+    BedHead: world/73.5/101.0/0.5/0.0/0.0
+    BedBack: world/74.5/101.0/0.5/0.0/0.0
+    PortalBlock: world/83.0/100.0/3.0/0.0/0.0
+    SpawnPoint: world/85.5/101.0/0.5/90.0/0.0
+    Generator: world/88.5/100.7/0.5/0.0/90.0
+#鑽石島生成器 建議站在該方塊上方後看玩家的F3 Y座標 將其數值加上1.6
+DiamondGenerators:
+- world/-35.5/103.1/36.5/0.0/0.0
+- world/-35.5/103.1/-35.5/0.0/0.0
+- world/35.5/103.1/-35.5/0.0/0.0
+- world/35.5/103.1/36.5/0.0/0.0
+#綠寶石島生成器 建議站在該方塊上方後看玩家的F3 Y座標 將其數值加上1.6
+EmeraldGenerators:
+- world/0.5/102.1/0.5/0.0/0.0
+- world/0.5/107.1/0.5/0.0/0.0
+#隊伍專屬保護區 由重生點開始算
+TeamProtectionDistance: 6
+maxX: 130
+maxY: 130
+maxZ: 130
+minX: -130
+minY: 75
+minZ: -130

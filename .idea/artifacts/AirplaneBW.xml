@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AirplaneBW">
+    <output-path>$PROJECT_DIR$/out/artifacts/AirplaneBW</output-path>
+    <root id="archive" name="AirplaneBW.jar">
+      <element id="module-output" name="AirplaneBW" />
+      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+      <element id="directory" name="maps">
+        <element id="file-copy" path="$PROJECT_DIR$/maps/example.yml" />
+      </element>
+    </root>
+  </artifact>
+</component>

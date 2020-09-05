@@ -1,0 +1,19 @@
+main: com.cutesmouse.airplane.Main
+name: "AirplaneBW"
+version: "1.0"
+api-version: "1.12.2"
+depend:
+  - "Citizens"
+commands:
+  bw:
+    usage: For admin
+    description: nu
+  home:
+    usage: Back to your skyblock
+    description: nu
+    aliases:
+      - h
+      - island
+      - i
+  team:
+    usage: Team
