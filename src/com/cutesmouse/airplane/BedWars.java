@@ -20,6 +20,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class BedWars {
     public static BedWars INSTANCE;
@@ -282,11 +283,23 @@ public class BedWars {
         }
     }
     public void ace(Team t) {
+        boolean end = false;
+        ArrayList<Team> live = Arrays.stream(Team.TEAMS).filter(p -> p.hasBed() || p.getAlivePeople() > 0).collect(Collectors.toCollection(ArrayList::new));
+        if (live.size() == 1) {
+            end = true;
+        }
         for (Player player : Bukkit.getOnlinePlayers()) {
             player.sendMessage("§7⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯");
             player.sendMessage("§6➢ §b§l飛機盃 §a「生存床戰」");
             player.sendMessage(t.getDisplayName()+" §6已全員淘汰!");
             player.sendMessage("§7⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯");
+            if (end) {
+                player.sendMessage("§7⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯");
+                player.sendMessage("§6➢ §b§l飛機盃 §a「生存床戰」");
+                player.sendMessage("§6恭喜 "+live.get(0).getDisplayName()+" §6獲勝!");
+                player.sendMessage("§7⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯");
+                player.playSound(player.getLocation(),Sound.ENTITY_FIREWORK_LAUNCH,1,1);
+            }
         }
     }
     private static void loadWorldSettings(World w) {

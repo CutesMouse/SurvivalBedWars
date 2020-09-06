@@ -78,10 +78,21 @@ public class GameplayListener implements Listener {
         if (!e.getDamager().getType().equals(EntityType.PLAYER)) return;
         DAMAGETABLE.put(e.getEntity().getName(),new DamageData(System.currentTimeMillis(),e.getDamager().getName()));
     }
+    public static HashMap<Player,Long> PROTECTION_LIST = new HashMap<>();
     @EventHandler
     public void onPlayerDroppedIntoVoid(EntityDamageEvent e) {
         if (!BedWars.INSTANCE.hasStarted()) return;
         if (!e.getEntityType().equals(EntityType.PLAYER)) return;
+
+        if (PROTECTION_LIST.containsKey(e.getEntity())) {
+            long time = PROTECTION_LIST.get(e.getEntity());
+            if (System.currentTimeMillis() - time > 10000L) {
+                PROTECTION_LIST.remove(e.getEntity());
+                return;
+            }
+            e.setCancelled(true);
+        }
+
         if (!e.getCause().equals(EntityDamageEvent.DamageCause.VOID)) return;
         death(((Player) e.getEntity()));
         Team team = Team.getEntry(e.getEntity().getName());
@@ -125,6 +136,7 @@ public class GameplayListener implements Listener {
                     p.setGameMode(GameMode.SURVIVAL);
                     p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE,5*20,255,true));
                     p.teleport(team.getSpawnpoint());
+                    PROTECTION_LIST.put(p,System.currentTimeMillis());
                     return;
                 }
                 p.sendTitle("§c您已經死亡!","§c您將在 §e"+left+" §c秒後復活!",0,30,0);

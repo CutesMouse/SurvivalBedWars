@@ -1,5 +1,6 @@
 package com.cutesmouse.airplane.permission;
 
+import com.cutesmouse.airplane.BedWars;
 import com.cutesmouse.airplane.Team;
 import com.cutesmouse.airplane.tool.Round;
 import org.bukkit.Location;
@@ -13,6 +14,10 @@ public class MerchantPlacer {
          */
         Team placer = Team.getEntry(p.getName());
         if (placer == null) return false;
+        if (!pos.getWorld().getName().equals(BedWars.DEFAULT.getName())) {
+            p.sendMessage("§c不符合放置條件 - 需在床戰世界內放置");
+            return true;
+        }
         //距離重生點十格內
         if (!Round.similarLocation(placer.getSpawnpoint(),pos,10)) {
             p.sendMessage("§c不符合放置條件 - 距離重生點十格內");
