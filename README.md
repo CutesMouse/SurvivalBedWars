@@ -17,7 +17,7 @@
 
 ## 注意事項
 1. 此插件須配合其他兩個插件使用，分別為 "MGui" 與 "Citizens"，檔案已放置在[此](/dependencies)。
-2. 預設提供一套地圖，檔案已放置在[此](/maps/Standard BedWars Map.zip)。
+2. 預設提供一套地圖，檔案已放置在[此](/maps/Standard%20BedWars%20Map.zip)。
 3. 若要設定為自己喜歡的地圖，請更改config資料夾中的地圖位置文件。
 
 ## 如何更改自己的地圖
