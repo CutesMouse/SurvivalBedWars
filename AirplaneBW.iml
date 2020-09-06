@@ -20,7 +20,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/MGui.jar!/" />
+          <root url="jar://E:/Downloads/Citizens-2.0.26-b1895.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -29,7 +29,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://E:/Downloads/Citizens-2.0.26-b1895.jar!/" />
+          <root url="jar://$MODULE_DIR$/dependencies/MGui.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

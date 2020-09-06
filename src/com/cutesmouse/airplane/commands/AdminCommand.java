@@ -178,8 +178,7 @@ public class AdminCommand implements CommandExecutor {
                 sender.sendMessage("§a已將 §b"+args[2]+" §a從所有隊伍中移除!");
                 break;
             default:
-                sender.sendMessage(INTRO+"/bw team <random|set|reset|remove>");
-                sender.sendMessage("§7可用: 1, 2, 3, 4");
+                sender.sendMessage(INTRO+"/bw team <selector|random|set|reset|remove>");
         }
     }
 }
