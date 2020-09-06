@@ -26,7 +26,7 @@ public class AdminCommand implements CommandExecutor {
         }
         if (!(sender instanceof Player)) return true;
         if (args.length == 0) {
-            sender.sendMessage(INTRO+"/bw <tp|team|start|time|map>");
+            sender.sendMessage(INTRO+"/bw <tp|team|start|time|map|speed>");
             return true;
         }
         switch (args[0].toLowerCase()) {
